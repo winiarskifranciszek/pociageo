@@ -1,0 +1,25 @@
+﻿@{
+    ViewBag.Title = "Home Page";
+}
+@model Projekt.Models.znajdz
+
+
+
+
+@{
+    if (ViewBag.alert == false)
+    {
+    
+        <span class="blad">Błędny email lub Hasło</span>
+    }
+
+}
+<div class="jumbotron">
+    <p>
+        <a href='/Home/logowanie' class="btn btn-primary btn-lg">Logowanie </a>
+        <td><a href='/Home/rejestracja' class="btn btn-primary btn-lg">Rejestracja </a></td>
+    </p>
+
+
+</div>
+

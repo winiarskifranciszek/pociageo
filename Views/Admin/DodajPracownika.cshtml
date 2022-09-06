@@ -1,0 +1,22 @@
+﻿
+@{
+    ViewBag.Title = "DodajPracownika";
+}
+
+<h2>Dodaj Pracownika</h2>
+
+@model Projekt.Models.pracownik
+<div class="jumbotron">
+
+
+
+    <form action="/Admin/dodajPra" method="post">
+        @Html.AntiForgeryToken()
+        @Html.EditorForModel(Model)
+        <input type="submit" value="Dodaj" />
+    </form>
+</div>
+
+<div>
+    @Html.ActionLink("Funkcja Admina", "FunkcjeAdmina")
+</div>

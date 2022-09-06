@@ -1,0 +1,99 @@
+﻿
+@{
+    ViewBag.Title = "";
+
+}
+@{
+    if (ViewBag.alert == true)
+    {
+        <div class="jumbotron">
+
+            <span class="blad">Stacja dodana</span>
+
+        </div>
+
+
+    }
+
+}
+
+<h2>Witaj na stronie administratora co chcesz zrobić?</h2>
+<hr>
+<br>
+
+<div class="jumbotron">
+    <h3>Dodawanie</h3>
+    <br>
+    <table style="width:100%;">
+        <tr>
+            <td>&nbsp;<a href='/Admin/dodajStacje' class="btn btn-primary btn-lg">Dodaj Stacje </a></td>
+            <td>&nbsp;<a href='/Admin/DodajPracownika' class="btn btn-primary btn-lg">Dodaj Pracownika </a></td>
+
+        </tr>
+
+        <tr>
+            <td>&nbsp;<a href='/Admin/dodaj_sklad' class="btn btn-primary btn-lg">Dodaj Skład </a></td>
+            <td>&nbsp;<a href='/Admin/dodaj_trase' class="btn btn-primary btn-lg">Dodaj Trase </a></td>
+
+        </tr>
+        <tr>
+            <td>&nbsp;<a href='/Admin/Zaplanuj_Trase' class="btn btn-primary btn-lg">Dodaj Przystanki Na Trasie </a></td>
+            <td>&nbsp;<a href='/Admin/Przypisz_Obsluge' class="btn btn-primary btn-lg">Przypisz Obsługę do składu </a></td>
+
+        </tr>
+        <tr><td>&nbsp;</td><td>&nbsp;</td></tr>
+    </table>
+</div>
+    @*edit*@
+
+    <hr>
+    <div class="jumbotron">
+
+        <h3>Edycja</h3>
+        <br>
+        <table style="width:100%;">
+            <tr>
+                <td>&nbsp;<a href='/Admin/edytuj_stacje' class="btn btn-success btn-lg">Edytuj Stacje </a></td>
+                <td>&nbsp;<a href='/Admin/DodajPracownika' class="btn btn-success btn-lg">Edytuj Pracownika </a></td>
+
+            </tr>
+
+            <tr>
+                <td>&nbsp;<a href='/Admin/dodaj_sklad' class="btn btn-success btn-lg">Edytuj Skład </a></td>
+                <td>&nbsp;<a href='/Admin/dodaj_trase' class="btn btn-success btn-lg">Edytuj Trase </a></td>
+
+            </tr>
+            <tr>
+                
+                <td>&nbsp;<a href='/Admin/Przypisz_Obsluge' class="btn btn-success btn-lg">Edytuj Obsługę składu </a></td>
+
+            </tr>
+            <tr><td>&nbsp;</td><td>&nbsp;</td></tr>
+        </table>
+        </div>
+        <hr>
+        @*delete*@
+        <div class="jumbotron">
+            <h3>Usuwanie</h3>
+            <br>
+
+            <table style="width:100%;">
+                <tr>
+                    <td>&nbsp;<a href='/Admin/usun_Stacje' class="btn btn-danger btn-lg">Usuń Stacje </a></td>
+                    <td>&nbsp;<a href='/Admin/DodajPracownika' class="btn btn-danger btn-lg">Usuń Pracownika </a></td>
+
+                </tr>
+
+                <tr>
+                    <td>&nbsp;<a href='/Admin/dodaj_sklad' class="btn btn-danger btn-lg">Usuń Skład </a></td>
+                    <td>&nbsp;<a href='/Admin/dodaj_trase' class="btn btn-danger btn-lg">Usuń Trase </a></td>
+
+                </tr>
+                <tr>
+                    <td>&nbsp;<a href='/Admin/Zaplanuj_Trase' class="btn btn-danger btn-lg">Usuń Przystanki Na Trasie </a></td>
+                    <td>&nbsp;<a href='/Admin/Przypisz_Obsluge' class="btn btn-danger btn-lg">Usuń Obsługę składu </a></td>
+
+                </tr>
+                <tr><td>&nbsp;</td><td>&nbsp;</td></tr>
+            </table>
+            </div>

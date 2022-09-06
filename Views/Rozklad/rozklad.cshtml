@@ -1,0 +1,12 @@
+﻿@model Projekt.Models.znajdz
+@{
+    ViewBag.Title = "Rozkład";
+}
+
+<h2>rozklad</h2>
+
+
+<form action="/Rozklad/znajdz" method="post">
+    @Html.EditorForModel(Model)
+    <input type="submit" value="Szukaj" />
+</form>

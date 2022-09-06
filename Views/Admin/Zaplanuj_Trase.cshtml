@@ -1,0 +1,44 @@
+﻿
+
+
+@model IEnumerable<Projekt.Models.znajdz_trase>
+@{
+    ViewBag.Title = "Znajdz trase";
+}
+<h2>Trasy </h2>
+<form action="/Admin/dodaj_przystanek" method="post">
+    <table class="table table-bordered" style="width:50%">
+        <thead>
+            <tr>
+                <th scope="row" style="width:30%">ID</th>
+                <th scope="row" style="width:30%">Stacja początkowa</th>
+                <th scope="row" style="width:40%">Stacja Końcowa</th>
+                <th scope="row" style="width:40%">ID pociagu</th>
+                <th scope="row" style="width:40%">Wybierz</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>@item.ID</td>
+                    <td>@item.stacja_1</td>
+                    <td>@item.stacja_2</td>
+                    <td>@item.Id_Pociag</td>
+                    <td>
+                        <input type="hidden" name ="sta1" value="@item.stacja_1" />
+                        <input type="hidden" name ="sta2" value="@item.stacja_2" />
+                        <input id="Radio1" type="radio" name="ID" value="@item.ID" />
+                    </td>
+                </tr>
+
+            }
+
+        </tbody>
+    </table>
+    <input type="submit" value="Wybierz trase" />
+</form>
+
+<div>
+    @Html.ActionLink("Funkcja Admina", "FunkcjeAdmina")
+</div>

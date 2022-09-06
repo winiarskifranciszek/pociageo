@@ -1,0 +1,52 @@
+﻿
+
+@model IEnumerable<Projekt.Models.przypisz_obsl>
+@{
+    ViewBag.Title = "Znajdz trase";
+}
+<h2>Przypisz obsługe</h2>
+<form action="/Admin/przypisz_obsluge" method="post">
+    <table class="table table-bordered" style="width:50%">
+        <thead>
+            <tr>
+                <th scope="row" style="width:30%">ID</th>
+                <th scope="row" style="width:30%">Imie</th>
+                <th scope="row" style="width:40%">Nazwisko</th>
+                <th scope="row" style="width:40%">Pesel</th>
+                <th scope="row" style="width:40%">Dostepnosc_start</th>
+                <th scope="row" style="width:40%">Dostepnosc_end</th>
+                <th scope="row" style="width:40%">oblsuga</th>
+                <th scope="row" style="width:40%">Funkcja</th>
+            </tr>
+        </thead>
+        @*//"SELECT Id_pracownicy, Imie, Nazwisko,  Pesel, Dostepnosc_start,Dostepnosc_end,oblsuga,Funkcja FROM Pracownicy";*@
+        <tbody>
+            @foreach (var item in Model)
+            {
+            <tr>
+                <td>@item.Id_pracownicy</td>
+                <td>@item.Imie</td>
+                <td>@item.Nazwisko</td>
+                <td>@item.Pesel</td>
+                <td>@item.Dostepnosc_start</td>
+                <td>@item.Dostepnosc_end</td>
+                <td>@item.obsluga</td>
+                <td>@item.Funkcja</td>
+                
+                <td>
+                   
+                   
+                    <input id="Radio1" type="radio" name="ID" value="@item.Id_pracownicy" />
+                </td>
+            </tr>
+
+            }
+
+        </tbody>
+    </table>
+    <input type="submit" value="Przypisz " />
+</form>
+
+<div>
+    @Html.ActionLink("Funkcja Admina", "FunkcjeAdmina")
+</div>

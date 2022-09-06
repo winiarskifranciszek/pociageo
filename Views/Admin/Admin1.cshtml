@@ -1,0 +1,22 @@
+﻿
+
+@model Projekt.Models.admin
+
+
+@{
+    ViewBag.Title = "Zaloguj sie jako Administrator";
+}
+
+
+<div class="jumbotron">
+
+    <h2>Zaloguj sie jako Administrator</h2>
+
+    <form action="/Admin/Admin" method="post">
+        @Html.EditorForModel(Model)
+        <input type="submit" value="Zaloguj sie" />
+    </form>
+</div>
+
+
+

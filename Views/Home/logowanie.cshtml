@@ -1,0 +1,68 @@
+﻿@model Projekt.Models.logowanie
+
+@{
+    ViewBag.Title = "Logowanie";
+}
+
+
+
+
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+
+    <div class="form-horizontal">
+        <h3>Logowanie</h3>
+        <div class="jumbotron">
+            @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+            <div class="form-group">
+                @Html.LabelFor(model => model.Login, htmlAttributes: new { @class = "control-label col-md-2" })
+                <div class="col-md-10">
+                    @Html.EditorFor(model => model.Login, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.Login, "", new { @class = "text-danger" })
+                </div>
+            </div>
+
+            <div class="form-group">
+                @Html.LabelFor(model => model.Hasło, htmlAttributes: new { @class = "control-label col-md-2" })
+                <div class="col-md-10">
+                    @Html.EditorFor(model => model.Hasło, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.Hasło, "", new { @class = "text-danger" })
+                </div>
+            </div>
+
+            <div class="form-group">
+                <div class="col-md-offset-2 col-md-10">
+                    <input type="submit" value="Zaloguj" class="btn btn-default" />
+                    @{
+                        if (ViewBag.alert == false)
+                        {
+                            <span class="blad">Błędny email lub Hasło</span>
+                        }
+
+                    }
+                </div>
+            </div>
+        </div>
+    </div>
+}
+    
+    <li>
+        @Html.ActionLink("Panel Administratorski", "Admin1", "Admin")
+    </li>
+
+<div>
+    @Html.ActionLink("Strona startowa", "Index")
+</div>
+
+@*<div>
+    @Html.ActionLink("Nie pamiętam hasła", "ResetHasła")
+</div>*@
+
+
+
+
+
+<script src="~/Scripts/jquery-1.10.2.min.js"></script>
+<script src="~/Scripts/jquery.validate.min.js"></script>
+<script src="~/Scripts/jquery.validate.unobtrusive.min.js"></script>

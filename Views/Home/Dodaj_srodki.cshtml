@@ -1,0 +1,21 @@
+﻿
+@{
+    ViewBag.Title = "Dodaj_srodki";
+}
+
+<h2>Dodaj_srodki</h2>
+
+<h2>Tutaj miał być formulaż przelewowy ale nie wyszło</h2>
+
+@model Projekt.Models.przelew
+<div class="jumbotron">
+
+
+
+    <form action="/Home/dodaj_pie" method="post">
+        @Html.AntiForgeryToken()
+        @Html.EditorForModel(Model)
+        <input type="submit" value="Dodaj" />
+    </form>
+</div>
+

@@ -1,0 +1,56 @@
+﻿
+@{
+    ViewBag.Title = "usun_Stacje";
+}
+
+<h2>usun_Stacje</h2>
+
+@model IEnumerable<Projekt.Models.dodajStacje>
+
+
+<h2>Wybierz stację do Usunięcia</h2>
+<hr>
+<div class="jumbotron">
+
+
+    <form action="/Admin/usun_to_stacja" method="post">
+        <table class="table table-bordered" style="width:50%">
+            <thead>
+                <tr>
+                    <th scope="row" style="width:30%">ID</th>
+                    <th scope="row" style="width:30%">Nazwa</th>
+                    <th scope="row" style="width:40%">Miejscowosc</th>
+                    <th scope="row" style="width:20%">Wybierz</th>
+
+
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in Model)
+                {
+                    <tr>
+                        <td>@item.Id</td>
+                        <td>@item.Nazwa</td>
+                        <td>@item.Miejscowosc</td>
+                        <td>
+                    
+                            <input id="Radio1" type="radio" name="Id" value="@item.Id" />
+                        </td>
+
+
+                    </tr>
+
+                }
+
+            </tbody>
+        </table>
+        <input type="submit" value="Usuń stacje" />
+
+    </form>
+</div>
+
+<div>
+    @Html.ActionLink("Strona startowa", "Index", "Home")
+</div>
+
+

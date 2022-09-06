@@ -1,0 +1,87 @@
+﻿
+@{
+    ViewBag.Title = "dodaj_przystanek";
+}
+
+<h2>dodaj_przystanek</h2>
+
+@model Projekt.Models.dodaj_przystanek
+<div class="jumbotron">
+
+
+
+    <form action="/Admin/dodaj_przy" method="post">
+        <div class="form-horizontal">
+            <input type="hidden" value="@Model.Id_Trasy" name="Id_Trasy" />
+            <div class="form-group">
+                @Html.LabelFor(m => m.Stacja_pocz)
+                @Html.TextBoxFor(m => m.Stacja_pocz, new { disabled = "disabled" })
+            </div>
+            <div class="form-group">
+                @Html.LabelFor(m => m.Czas_przujazdu)
+                @Html.EditorFor(m => m.Czas_przujazdu)
+            </div>
+            <div class="form-group">
+                @Html.LabelFor(m => m.Czas_odjazdu)
+                @Html.EditorFor(m => m.Czas_odjazdu)
+            </div>
+            <div class="form-group">
+                @Html.LabelFor(m => m.Stacja)
+                <select name="Id_Stacje">
+                    @foreach (var stacja in Model.Stacja)
+                    {
+                        <option value="@stacja.Id">@stacja.Nazwa</option>
+                    }
+                </select>
+            </div>
+            <div class="form-group">
+                @Html.LabelFor(m => m.Stacja_kon)
+                @Html.TextBoxFor(m => m.Stacja_kon, new { disabled = "disabled" })
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Dodaj" />
+            </div>
+        </div>
+    </form>
+
+    <div>
+        @Html.ActionLink("Funkcja Admina", "FunkcjeAdmina")
+    </div>
+
+
+
+    @*@model IEnumerable<Projekt.Models.znajdz_trase>
+        @{
+            ViewBag.Title = "Znajdz trase";
+        }
+        <h2>Trasy </h2>
+        <table class="table table-bordered" style="width:50%">
+            <thead>
+                <tr>
+                    <th scope="row" style="width:30%">ID</th>
+                    <th scope="row" style="width:30%">Stacja początkowa</th>
+                    <th scope="row" style="width:40%">Stacja Końcowa</th>
+                    <th scope="row" style="width:40%">ID pociagu</th>
+                    <th scope="row" style="width:40%">Wybierz</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in Model)
+                {
+                    <tr>
+                        <td>@item.ID</td>
+                        <td>@item.stacja_1</td>
+                        <td>@item.stacja_2</td>
+                        <td>@item.Id_Pociag</td>
+                        <td><input id="Radio1" type="radio" /></td>
+                    </tr>
+
+                }
+
+            </tbody>
+
+        </table>
+        <form action="/Admin/dodaj_przystanek" method="post">
+
+            <input type="submit" value="Wybierz trase" />
+        </form>*@

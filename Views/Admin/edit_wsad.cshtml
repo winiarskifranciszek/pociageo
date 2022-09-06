@@ -1,0 +1,34 @@
+﻿@{
+    ViewBag.Title = "edit_wsad";
+}
+@model Projekt.Models.dodajStacje
+<h2>Edytuj stacje</h2>
+
+
+<br>
+
+<h2>Stare wartosci</h2>
+<tr>
+    <td>@Model.Nazwa</td>
+    <td>@Model.Miejscowosc</td>
+
+
+    <td>
+        <input type="hidden" name="sta1" value="@Model.Nazwa" />
+        <input type="hidden" name="sta2" value="@Model.Miejscowosc" />
+
+    </td>
+</tr>
+
+<br>
+
+<h2>Nowe wartości</h2>
+<form action="/Admin/wpisz_edit_sta" method="post">
+
+    @Html.EditorForModel(Model)
+    <input type="submit" value="Edytuj" />
+</form>
+
+<div>
+    @Html.ActionLink("Funkcja Admina", "FunkcjeAdmina")
+</div>
